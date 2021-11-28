@@ -14,60 +14,46 @@
     
    
     <style>
-        .header{
-            padding: 0 10rem;
-            margin: 1.5rem;
+        .header1{
+            padding: 0 3rem;
+            margin: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .logo{
+        .logo1{
             color: white;
             font-size: 2.8rem;
             font-weight: bold;
         }
-        .profile{
+        .profile1{
             text-decoration: none;
             color: white;
         }
-        .btn{
+        .btn1{
+            text-decoration: none;
             color: white;
-            background-color: rgb(255, 0, 0);
+            background-color: tomato;
             border-radius: 900px;
             padding: .5rem 1rem;
             margin-left: 1rem;
         }
-        .btn:hover{
-            background-color: rgba(255, 0, 0, 0.74);
-        }
-        a{
-            text-decoration: none;
-            color: white;
+        .btn1:hover{
+            background-color: rgb(255, 126, 103);
         }
 
         body{
             background-color: #143b55;
-            padding: 0;
+            padding: 50px;
             margin: 0;
             font-family: 'Nunito', sans-serif;
         }
 
         .container{
-            margin: 0 10rem;
-            padding: 2rem 5rem;
-            background-color: rgba(204, 204, 204, 0.397);
-            border-radius: 10px;
-            min-height: 70vh;
-        }
-        h1{
-            margin: 0;
-        }
-        .sub_header{
-            margin: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
+            max-width: 550px;
+            margin: auto;
+            background-color: #fff;
+            
         }
     </style>
     
@@ -75,9 +61,7 @@
 <body>
 
     <div class='header'>
-        <a href="{% url 'tasks' %}">
-            <h1 class="logo">TODO</h1>
-        </a>
+        <h1 class="logo">TODO</h1>
         <div class="profile-section">
             {% if request.user.is_authenticated %}
             <a href="#" class="profile">
@@ -95,13 +79,7 @@
     <div class="container">
     <!-- {% block content %} -->
 
-    <a href="{% url 'tasks' %}">Go back</a>
-
-    <form method="POST">
-        {% csrf_token %}
-        <p>Are you sure to delete {{ task }}</p>
-        <input type="submit" value="Delete" />
-    </form>
+    
     
     <!-- {% endblock content %} -->
     </div>
